@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Pegawai</title>
+    <style>
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 20px auto;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tfoot {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Data Pegawai</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Pegawai</th>
+          <th>Umur</th>
+          <th>Jabatan</th>
+          <th>Status</th>
+          <th>Gaji Pokok</th>
+          <th>Tunjangan Jabatan</th>
+          <th>BPJS</th>
+          <th>Tunjangan Keluarga</th>
+          <th>Total Gaji</th>
+        </tr>
+      </thead>
+      <tbody id="dataPegawai"></tbody>
+      <tfoot id="totalGaji"></tfoot>
+    </table>
+
+    <script>
+      // Data Pegawai
+      const pegawai = {
+        nama: "Dodi Prayodi",
+        umur: 25,
+        jabatan: "Manajer",
+        status: "Menikah",
+      };
+
+      // Menentukan gaji pokok berdasarkan jabatan
+      let gajiPokok;
+      if (pegawai.jabatan === "Manajer") {
+        gajiPokok = 15000000;
+      } else if (pegawai.jabatan === "Asisten Manajer") {
+        gajiPokok = 10000000;
+      } else if (pegawai.jabatan === "Staff") {
+        gajiPokok = 5000000;
+      } else {
+        gajiPokok = 0;
+      }
+
+      // Perhitungan tunjangan
+      const tunjanganJabatan = 0.15 * gajiPokok; // 15% dari gaji pokok
+      const bpjs = 0.1 * gajiPokok; // 10% dari gaji pokok
+      const tunjanganKeluarga =
+        pegawai.status === "Menikah" ? 0.2 * gajiPokok : 0; // 20% jika menikah
+
+      // Total gaji
+      const totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+      // Menampilkan data ke tabel
+      document.getElementById("dataPegawai").innerHTML = `
+        <tr>
+            <td>${pegawai.nama}</td>
+            <td>${pegawai.umur} tahun</td>
+            <td>${pegawai.jabatan}</td>
+            <td>${pegawai.status}</td>
+            <td>Rp ${gajiPokok.toLocaleString()}</td>
+            <td>Rp ${tunjanganJabatan.toLocaleString()}</td>
+            <td>Rp ${bpjs.toLocaleString()}</td>
+            <td>Rp ${tunjanganKeluarga.toLocaleString()}</td>
+            <td>Rp ${totalGaji.toLocaleString()}</td>
+        </tr>
+    `;
+
+      // Menampilkan total gaji di footer
+      document.getElementById("totalGaji").innerHTML = `
+        <tr>
+            <td colspan="8" style="text-align: right;">Total Gaji:</td>
+            <td>Rp ${totalGaji.toLocaleString()}</td>
+        </tr>
+    `;
+    </script>
+  </body>
+</html>
