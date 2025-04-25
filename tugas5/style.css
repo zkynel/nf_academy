@@ -1,0 +1,112 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 2px solid #000;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #000;
+}
+
+header h1 {
+  color: green;
+}
+
+/* Navigation */
+nav {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #000;
+}
+
+nav h2 {
+  color: green;
+}
+
+/* Content Wrapper untuk layout tiga kolom */
+.content-wrapper {
+  display: flex;
+  border-bottom: 2px solid #000;
+}
+
+/* Sidebar kiri */
+.sidebar-left {
+  flex: 1;
+  padding: 20px;
+  min-height: 400px;
+  border-right: 2px solid #000;
+}
+
+.sidebar-left h2 {
+  color: green;
+}
+
+/* Main Content */
+main {
+  flex: 3;
+  padding: 20px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-right: 2px solid #000;
+}
+
+main h2 {
+  color: green;
+}
+
+/* Sidebar kanan */
+.sidebar-right {
+  flex: 1;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.sidebar-right h2 {
+  color: green;
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer h2 {
+  color: green;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar-left,
+  .sidebar-right {
+    border-right: none;
+    border-bottom: 2px solid #000;
+  }
+}
