@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TUGAS 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        a:hover {
+            color: blue;
+        }
+        fieldset {
+            border: 2px solid #000;
+            padding: 10px;
+            margin: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+    <frameset rows="15%, 10%, 65%, 10%" border="1">
+        <frame src="header.html" name="header" scrolling="no" noresize>
+        <frame src="nav.html" name="menu" scrolling="no" noresize>
+        <frameset cols="20%, 60%, 20%">
+            <frame src="left.html" name="left" scrolling="auto">
+            <frame src="home.html" name="framemain" scrolling="auto">
+            <frame src="right.html" name="right" scrolling="auto">
+        </frameset>
+        <frame src="footer.html" name="footer" scrolling="no" noresize>
+    </frameset>
+    </html>
