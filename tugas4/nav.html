@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+      }
+      .nav-content {
+        background: #333;
+        padding: 15px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 5px 15px;
+        transition: all 0.3s ease;
+      }
+      a:hover {
+        color: #ffcc00;
+      }
+
+      @media (max-width: 768px) {
+        ul {
+          flex-direction: column;
+          text-align: center;
+        }
+        a {
+          display: block;
+          padding: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-content">
+      <ul>
+        <li><a href="home.html" target="framemain">Home</a></li>
+        <li><a href="study.html" target="framemain">My Study</a></li>
+        <li><a href="gallery.html" target="framemain">Gallery</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
